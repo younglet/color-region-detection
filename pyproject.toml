@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "color-region-detection"
+version = "3.0"
+description = "基于 HSV 分段的色彩区域检测：只有 3 个可调参数的精简实现"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "opencv-python",
+    "numpy",
+]
+
+[project.scripts]
+color-region-detection = "color_region_detection.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
